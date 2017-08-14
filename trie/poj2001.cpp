@@ -16,6 +16,7 @@ struct Node {
     }
 };
 Node *root;
+char strs[1002][22];
 
 void insert(char *str) {
     Node *cur_node = root;
@@ -31,28 +32,31 @@ void insert(char *str) {
     cur_node->value ++;
 }
 
-int search(char *str) {
+void search(char *str) {
     Node *cur_node = root;
     for(int i= 0;i < strlen(str); i++) {
         int index = str[i] - 'a';
-        if (!(cur_node->next[index])) {
-            return 0;
+        printf("%c", str[i]);
+        if(cur_node->next[index]->value==1) {
+            return ;
         }
         cur_node = cur_node->next[index];
     }
-    return cur_node->value;
 }
 
 int main() {
     root = new Node;
 
-    char str[15];
-    while(gets(str) && strlen(str)) {
-        insert(str);
+    char str[22];
+    int len = 0;
+    while(scanf("%s", strs[len])!=EOF) {
+        insert(strs[len]);
+        ++ len;
     }
-
-    while(gets(str)) {
-        printf("%d\n", search(str));
+    for(int i = 0; i < len; i++) {
+        printf("%s ", strs[i]);
+        search(strs[i]);
+        printf("\n");
     }
     return 0;
 }
