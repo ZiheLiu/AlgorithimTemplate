@@ -1,4 +1,13 @@
+# CodeBlocks
 AcmStudy*
 bin/
 gmon.out
 obj/
+
+# Clion
+cmake-build-debug/
+CMakeLists.txt
+.idea/
+
+# mac
+.DS_Store
