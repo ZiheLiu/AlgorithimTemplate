@@ -19,3 +19,15 @@ for (auto iter = nums.rbegin(); iter != nums.rend(); iter++) {
 }
 ```
 
+
+
+### lower_bound和upper_bound
+
+对于一个非递减的序列nums、一个元素num，把num插入到nums中合适的位置，要使用二分法。
+
+在`std`中对于这个二分法有两种实现：`lower_bound`和`upper_bound`。
+
+- `lower_bound`返回nums中第一个**大于等于**num的位置。
+- `upper_bound`返回nums中第一个**大于**num的位置。
+
+![lower_bound](./lower_bound.png)
